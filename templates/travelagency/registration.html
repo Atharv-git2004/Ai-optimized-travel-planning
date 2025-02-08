@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Registration</title>
+</head>
+<body>
+    <h2>Agency Registration Form</h2>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <label for="agency_name">Agency Name:</label>
+        <input type="text" id="agency_name" name="AgencyName" value="{{ form.AgencyName.value }}" required>
+        <br><br>
+        
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="Location" value="{{ form.Location.value }}" required>
+        <br><br>
+
+        <label for="contact_person">Contact Person:</label>
+        <input type="text" id="contact_person" name="ContactPerson" value="{{ form.ContactPerson.value }}" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="Email" value="{{ form.Email.value }}" required>
+        <br><br>
+
+        <label for="phone_no">Phone Number:</label>
+        <input type="text" id="phone_no" name="PhoneNo" value="{{ form.PhoneNo.value }}" required>
+        <br><br>
+
+        <label for="services">Services:</label>
+        <textarea id="services" name="Services" required>{{ form.Services.value }}</textarea>
+        <br><br>
+
+        <label for="destinations">Destinations:</label>
+        <textarea id="destinations" name="Destinations" required>{{ form.Destinations.value }}</textarea>
+        <br><br>
+
+        <label for="operating_hours">Operating Hours:</label>
+        <input type="number" id="operating_hours" name="OperatingHours" value="{{ form.OperatingHours.value }}" required>
+        <br><br>
+
+        <label for="established_year">Established Year:</label>
+        <input type="number" id="established_year" name="EstablishedYear" value="{{ form.EstablishedYear.value }}" required>
+        <br><br>
+
+        <button type="submit">Register Agency</button>
+    </form>
+
+</body>
+</html>

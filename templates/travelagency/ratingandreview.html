@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews for {{ agency.Name }}</title>
+</head>
+<body>
+
+    <h1>Reviews for {{ agency.Name }}</h1>
+    <p><strong>Location:</strong> {{ agency.Location }} | <strong>Phone:</strong> {{ agency.PhoneNumber }}</p>
+
+    <h2>Customer Reviews</h2>
+    
+    {% if reviews %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Rating</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                    <tr>
+                        <td>{{ review.CustomerID.Name }}</td>
+                        <td>{{ review.Date }}</td>
+                        <td>{{ review.Ratings }} / 5</td>
+                        <td>{{ review.Review }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No reviews available for this agency.</p>
+    {% endif %}
+    
+</body>
+</html>
+

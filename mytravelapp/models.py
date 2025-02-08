@@ -72,7 +72,6 @@ class AgencyTable(models.Model):
     Destinations=models.CharField(max_length=150,null=True,blank=True)
     OperatingHours=models.IntegerField(null=True,blank=True)
     EstablishedYear=models.IntegerField(null=True,blank=True)
-    Ratings=models.CharField(max_length=300,null=True,blank=True)
     Status=models.CharField(max_length=10,null=True,blank=True)
 
 class FeedbackTable(models.Model):
@@ -89,6 +88,7 @@ class PlacesTable(models.Model):
     
 class RatingsAndReviewsTable(models.Model):
     CustomerID=models.ForeignKey(CustomerTable,on_delete=models.CASCADE,null=True,blank=True)
+    AgencyID=models.ForeignKey(AgencyTable,on_delete=models.CASCADE,null=True,blank=True)
     Date=models.DateField(max_length=20,null=True,blank=True)
     Ratings=models.IntegerField(null=True,blank=True)
     Review=models.CharField(max_length=150,null=True,blank=True)

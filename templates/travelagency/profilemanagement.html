@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Profile Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Profile Management</h2>
+        <form method="POST" action="{% url 'update_profile' agency.id %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="AgencyName">Agency Name</label>
+                <input type="text" id="AgencyName" name="AgencyName" value="{{ agency.AgencyName }}" maxlength="30">
+            </div>
+
+            <div class="form-group">
+                <label for="Location">Location</label>
+                <input type="text" id="Location" name="Location" value="{{ agency.Location }}" maxlength="30">
+            </div>
+
+            <div class="form-group">
+                <label for="ContactPerson">Contact Person</label>
+                <input type="text" id="ContactPerson" name="ContactPerson" value="{{ agency.ContactPerson }}" maxlength="30">
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" id="Email" name="Email" value="{{ agency.Email }}" maxlength="30">
+            </div>
+
+            <div class="form-group">
+                <label for="PhoneNo">Phone Number</label>
+                <input type="tel" id="PhoneNo" name="PhoneNo" value="{{ agency.PhoneNo }}" pattern="[0-9]{10}">
+            </div>
+
+            <div class="form-group">
+                <label for="Services">Services</label>
+                <textarea id="Services" name="Services" maxlength="150">{{ agency.Services }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="Destinations">Destinations</label>
+                <textarea id="Destinations" name="Destinations" maxlength="150">{{ agency.Destinations }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="OperatingHours">Operating Hours</label>
+                <input type="number" id="OperatingHours" name="OperatingHours" value="{{ agency.OperatingHours }}">
+            </div>
+
+            <div class="form-group">
+                <label for="EstablishedYear">Established Year</label>
+                <input type="number" id="EstablishedYear" name="EstablishedYear" value="{{ agency.EstablishedYear }}">
+            </div>
+
+            <div class="form-group">
+                <label for="Status">Status</label>
+                <input type="text" id="Status" name="Status" value="{{ agency.Status }}" maxlength="10">
+            </div>
+
+            <button type="submit" class="submit-button">Update Profile</button>
+        </form>
+    </div>
+</body>
+</html>

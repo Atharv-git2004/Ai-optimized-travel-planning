@@ -1,0 +1,46 @@
+<!-- booking_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking List</title>
+</head>
+<body>
+    <h1>All Bookings</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Booking Details</th>
+                <th>Contact Number</th>
+                <th>Total Guests</th>
+                <th>Status</th>
+                <th>Payment Status</th>
+                <th>Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.Name }}</td>
+                <td>{{ booking.Date }}</td>
+                <td>{{ booking.BookingDetails }}</td>
+                <td>{{ booking.ContactNumber }}</td>
+                <td>{{ booking.Totalguests }}</td>
+                <td>{{ booking.BookingStatus }}</td>
+                <td>{{ booking.PaymentStatus }}</td>
+                <td>{{ booking.Amount }}</td>
+                <td>
+                    <a href="{% url 'update_booking' booking.id %}">Accept</a>
+                    <a href="{% url 'update_booking' booking.id %}">Reject</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

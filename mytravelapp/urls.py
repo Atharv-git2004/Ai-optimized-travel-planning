@@ -20,6 +20,8 @@ from mytravelapp.views import *
 
 urlpatterns = [
     path('', LoginPage.as_view(), name='login'),
+    #///////////////////////////////////// ADMIN /////////////////////////////////////////////
+
     path('addplaces', AddPlaces.as_view(), name='addplaces'),
     path('manageflights', ManageFlights.as_view(), name='manageflights'),
     path('managehotels', ManageHotels.as_view(), name='managehotels'),
@@ -29,4 +31,25 @@ urlpatterns = [
     path('viewfeedback', ViewFeedback.as_view(), name='viewfeedback'),
     path('viewpackages', ViewPackages.as_view(), name='viewpackages'),
     path('viewusers', ViewUsers.as_view(), name='viewusers'),
+    path('addhotels', AddHotels.as_view(), name='addhotels'),
+    path('addflights', AddFlights.as_view(), name='addflights'),
+    path('viewbookingsofusers', ViewBookingsOfUsers.as_view(), name='viewbookingsofusers'),
+    path('home', Home.as_view(), name='home'),
+
+# ///////////////////////////// TRAVEL AGENCY //////////////////////////////////////////////////
+
+    path('addpackage', AddPackage.as_view(), name='addpackage'),
+    path('addplaces', AddPlaces.as_view(), name='addplaces'),
+    path('gallerymanagement', GalleryManagement.as_view(), name='gallerymanagement'),
+    path('home', Home.as_view(), name='home'),
+    path('managepackage', ManagePackage.as_view(), name='managepackage'),
+    path('manageplaces', ManagePlaces.as_view(), name='manageplaces'),
+    path('profilemanagement', ProfileManagementt.as_view(), name='profilemanagement'),
+    path('ratingandreview', RatingAndReview.as_view(), name='ratingandreview'),
+    path('registration', Registration.as_view(), name='registration'),
+    path('viewbookings', ViewBookings.as_view(), name='viewbookings'),
+    path('viewprofile', ViewProfile.as_view(), name='viewprofile'),
+
+
+
 ]

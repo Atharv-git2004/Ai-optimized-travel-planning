@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <h2>Add new place</h2><br>
+        <label>Place Name</label>
+            <input type="search" required><br><br>
+        <label>Spot name</label>
+            <input type="text" required><br><br>
+        <label>Add spot</label>
+            <input type="text" required><br><br>
+        <label>Catogory</label>
+        <select>
+            <option value="option1">Garden</option>
+            <option value="option1">Amusement Park</option>
+            <option value="option1">Meausium</option>
+            <option value="option1">Hill Station</option>
+        </select><br><br>
+        <label>Descrption:</label><br>
+            <textarea id="Description" name="Description" rows="4" cols="50"></textarea><br><br>
+        <label>Images:</label><br>
+            <input type="file" id="photos" name="photos[]" accept="image/*" multiple onchange="previewPhotos()">
+            <input type="file" id="photos" name="photos[]" accept="image/*" multiple onchange="previewPhotos()"><br><br>
+            <input type="file" id="photos" name="photos[]" accept="image/*" multiple onchange="previewPhotos()">
+            <input type="file" id="photos" name="photos[]" accept="image/*" multiple onchange="previewPhotos()"><br><br>
+            <input type="file" id="photos" name="photos[]" accept="image/*" multiple onchange="previewPhotos()">
+            <input type="file" id="photos" name="photos[]" accept="image/*" multiple onchange="previewPhotos()"><br><br>
+        <button type="submit">Submit</button>
+      </form>
+</body>
+</html>

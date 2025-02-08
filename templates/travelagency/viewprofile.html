@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Profile</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Agency Profile</h1>
+        
+        <!-- Display Agency Information -->
+        <div class="profile-info">
+            <h2>{{ agency.AgencyName }}</h2>
+
+            <table>
+                <tr>
+                    <td><strong>Location:</strong></td>
+                    <td>{{ agency.Location }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Contact Person:</strong></td>
+                    <td>{{ agency.ContactPerson }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Email:</strong></td>
+                    <td>{{ agency.Email }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Phone Number:</strong></td>
+                    <td>{{ agency.PhoneNo }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Services Offered:</strong></td>
+                    <td>{{ agency.Services }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Destinations:</strong></td>
+                    <td>{{ agency.Destinations }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Operating Hours:</strong></td>
+                    <td>{{ agency.OperatingHours }} hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Established Year:</strong></td>
+                    <td>{{ agency.EstablishedYear }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Status:</strong></td>
+                    <td>{{ agency.Status }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="actions">
+            <!-- You can add actions like edit or delete buttons -->
+            <a href="pr" class="btn btn-edit">Edit Profile</a>
+            <a href="profilemanagement.html" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this agency?')">Delete Profile</a>
+        </div>
+    </div>
+
+</body>
+</html>
